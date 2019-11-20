@@ -1,0 +1,16 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form>
+                <mat-form-field class="example-full-width">
+                    <input matInput id="nombre" name="usuario" placeholder="Usuario" [(ngModel)]="user.user">     
+                </mat-form-field><br> 
+                <mat-form-field class="example-full-width">
+                    <input type="password" matInput id="clave" name="contraseña" placeholder="Contraseña" [(ngModel)]="user.pass">  
+                </mat-form-field><br>
+                <button mat-raised-button color="primary" (click)="getUser()">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
