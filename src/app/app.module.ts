@@ -8,17 +8,25 @@ import { FooterComponent } from './components/main/footer/footer.component';
 import { LoginComponent } from './components/main/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './mocks/in-memory-data-service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { TablaComponent } from './components/main/tabla/tabla.component';
+import { HomeComponent } from './components/main/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './components/main/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    TablaComponent,
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     MatButtonModule,
+    MatTableModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    ReactiveFormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

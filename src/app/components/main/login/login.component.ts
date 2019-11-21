@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { ServiceService } from '../servicios/service.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
+import { first} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-login',
@@ -12,9 +16,15 @@ export class LoginComponent implements OnInit {
   user: User = new User();
   isLogin: boolean = false;
   
-  constructor(private serviceService: ServiceService) { }
+  constructor(
+    private serviceService: ServiceService,
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private activatedRoute: ActivatedRoute
 
-  ngOnInit() {
+    ) { }
+
+  ngOnInit() { 
   }
   setUser()
   {
@@ -42,5 +52,18 @@ export class LoginComponent implements OnInit {
       }
       
     );
+  }
+  onSubmit(){
+    this.authenticationService.login(this.user.user, this.user.pass)
+    .pipe(first())
+    .subscribe(
+      data =>{
+        this.router.navigate(['../home'],{relativeTo: this.activatedRoute});
+      },
+      error => {
+        console.log('error', error);
+        
+      }
+    )
   }
 }
