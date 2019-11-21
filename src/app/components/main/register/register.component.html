@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div class="container"><br>
+    <div class="row justify-content-center">
+        <h1>Registro de Usuario</h1>
+    </div>
+    <form [formGroup]="formG">
+        <div class="row justify-content-center mt-5">
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <mat-form-field class="w-100">
+                    <input matInput id="name" name="name" placeholder="Nombre" formControlName="name" required pattern="[a-zA-Z]*" maxlength="20">
+                    <mat-error *ngIf="formG.controls.name.errors && formG.controls.name.errors.required && (formG.controls.name.dirty || formG.controls.name.touched)">Campo Requerido</mat-error>
+                    <mat-error *ngIf="formG.controls.name.errors && formG.controls.name.errors.pattern && (formG.controls.name.dirty || formG.controls.name.touched)">No se pueden registrar numeros</mat-error>
+                </mat-form-field><br>
+            </div>
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <mat-form-field class="w-100">
+                    <input matInput id="lastname" name="lastname" placeholder="Apellido" formControlName="lastname" required pattern="[a-zA-Z]*">
+                    <mat-error *ngIf="formG.controls.lastname.errors && formG.controls.lastname.errors.required && (formG.controls.lastname.dirty || formG.controls.lastname.touched)">Campo Requerido</mat-error>
+                    <mat-error *ngIf="formG.controls.lastname.errors && formG.controls.lastname.errors.pattern && (formG.controls.lastname.dirty || formG.controls.lastname.touched)">No se pueden registrar numeros</mat-error>
+                </mat-form-field><br>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <mat-form-field class="w-100">
+                    <input matInput id="userN" name="userN" placeholder="Usuario" formControlName="userN">
+                    <mat-error *ngIf="formG.controls.userN.errors && formG.controls.userN.errors.required && (formG.controls.userN.dirty || formG.controls.userN.touched)">Campo Requerido</mat-error>
+                </mat-form-field><br>
+            </div>
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <mat-form-field class="w-100">
+                    <input matInput id="pass" name="pass" placeholder="Contraseña" formControlName="pass">
+                    <mat-error *ngIf="formG.controls.pass.errors && formG.controls.pass.errors.required && (formG.controls.pass.dirty || formG.controls.pass.touched)">Campo Requerido</mat-error>
+                </mat-form-field><br>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <button mat-button mat-raised-button color="primary" class="w-100"[disabled]="!formG.valid" (click)="saveUser()">Guardar</button>
+            </div>
+            <div class="col-x1-4 col-lg-4 col-md-6 col-sm-8">
+                <button mat-button mat-raised-button color="secondary" routerLink="/login" class="w-100">Volver</button>
+            </div>
+        </div>
+    </form>
+</div>

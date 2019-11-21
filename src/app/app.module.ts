@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule} from '@angular/material/input';
+import { MatButtonModule} from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/main/header/header.component';
 import { FooterComponent } from './components/main/footer/footer.component';
@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './mocks/in-memory-data-service';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { TablaComponent } from './components/main/tabla/tabla.component';
 import { HomeComponent } from './components/main/home/home.component';
 import { AppRoutingModule } from './app-routing.module';

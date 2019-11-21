@@ -6,9 +6,28 @@ export class InMemoryDataService implements InMemoryDbService
     {
         const user = 
         [
-            {user: 'Cristabel', pass: 123456},
-            {user: 'Bastian', pass: 123456},
-            {user: 'Eliah', pass: 123456}
+            {
+                id: 1,
+                name: 'Cristabel', 
+                lastname: 'Barra', 
+                user: 'Cristal', 
+                pass: 123
+            },
+            {
+                id: 2,
+                name: 'Bastian', 
+                lastname: 'Rozas', 
+                user: 'Dalsius', 
+                pass: 123
+            },
+            {
+                id: 3,
+                name: 'Juan', 
+                lastname: 'Topo', 
+                user: 'Topox', 
+                pass: 123
+            },
+            
         ];
         return {user};
     }

@@ -16,4 +16,9 @@ export class ServiceService {
   {
     return this.http.get<User[]>(this.userUrl).pipe();
   }
+  save(user: User)
+  {
+    console.log('usuario a guardar', user);
+    return this.http.post<User>(this.userUrl, user).pipe();
+  }
 }
