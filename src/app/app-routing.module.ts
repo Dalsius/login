@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/main/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegisterComponent } from './components/main/register/register.component';
+import { TablaComponent } from './components/main/tabla/tabla.component';
 
 const routes: Routes =
 [
@@ -26,9 +27,10 @@ const routes: Routes =
   component: LoginComponent
   },
   {
-  path: '**',
-  redirectTo: '',
-  pathMatch: 'full'
+  path: 'tabla',
+  component: TablaComponent
+ // redirectTo: '',
+ // pathMatch: 'full'
   },
 
 ]

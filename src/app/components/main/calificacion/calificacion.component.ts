@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './calificacion.component.html',
   styleUrls: ['./calificacion.component.css']
 })
-export class CalificacionComponent implements OnInit 
+export class CalificacionComponent implements OnInit, OnChanges 
 {
   @Input() message: string;
   @Output() response: EventEmitter<string> = new EventEmitter<string>();
@@ -14,6 +14,11 @@ export class CalificacionComponent implements OnInit
   constructor() { }
 
   ngOnInit() {  }
+
+  ngOnChanges(changes: SimpleChanges)
+  {
+    console.log('change', changes.message);
+  }
 
   sendMessage()
   {

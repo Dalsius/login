@@ -23,6 +23,7 @@ import { AlumnoComponent } from './components/main/alumno/alumno.component';
 import { CalificacionComponent } from './components/main/calificacion/calificacion.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

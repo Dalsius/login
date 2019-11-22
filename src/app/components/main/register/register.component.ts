@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit
      this.user.lastname = this.formG.get('lastname').value;
      this.user.user = this.formG.get('userN').value;
      this.user.pass = this.formG.get('pass').value;
-     this.user.countryId = this.formG.get('country').value;
+     this.user.countryId = this.formG.get('country').
+     value;
      
      this.serviceService.save(this.user).subscribe(
      data => 
@@ -68,7 +69,7 @@ export class RegisterComponent implements OnInit
     },
     error =>
     {
-     console.log('error guardando', error);
+     console.log('error mostrando', error);
     }
 
    );
