@@ -17,6 +17,11 @@ import { TablaComponent } from './components/main/tabla/tabla.component';
 import { HomeComponent } from './components/main/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './components/main/register/register.component';
+import {MatSelectModule} from '@angular/material/select';
+import { OnlyCharDirective } from './directives/only-char.directive';
+import { AlumnoComponent } from './components/main/alumno/alumno.component';
+import { CalificacionComponent } from './components/main/calificacion/calificacion.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +31,10 @@ import { RegisterComponent } from './components/main/register/register.component
     LoginComponent,
     TablaComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    OnlyCharDirective,
+    AlumnoComponent,
+    CalificacionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,7 @@ import { RegisterComponent } from './components/main/register/register.component
     MatTableModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSelectModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
