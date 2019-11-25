@@ -6,6 +6,7 @@ import { HomeComponent } from './components/main/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegisterComponent } from './components/main/register/register.component';
 import { TablaComponent } from './components/main/tabla/tabla.component';
+import { AlumnoComponent } from './components/main/alumno/alumno.component';
 
 const routes: Routes =
 [
@@ -25,6 +26,10 @@ const routes: Routes =
   {
   path: 'login',
   component: LoginComponent
+  },
+  {
+  path: 'alumno',
+  component: AlumnoComponent
   },
   {
   path: 'tabla',

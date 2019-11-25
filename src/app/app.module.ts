@@ -21,6 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { OnlyCharDirective } from './directives/only-char.directive';
 import { AlumnoComponent } from './components/main/alumno/alumno.component';
 import { CalificacionComponent } from './components/main/calificacion/calificacion.component';
+import { InfonotasComponent } from './components/main/infonotas/infonotas.component';
 
 
 
@@ -35,7 +36,8 @@ import { CalificacionComponent } from './components/main/calificacion/calificaci
     RegisterComponent,
     OnlyCharDirective,
     AlumnoComponent,
-    CalificacionComponent
+    CalificacionComponent,
+    InfonotasComponent
   ],
   imports: [
     BrowserModule,

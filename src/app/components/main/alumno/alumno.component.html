@@ -1,2 +1,25 @@
-<p>alumno works!</p>
-<app-calificacion [message]="messageValue" (response)="printMessage($event)"></app-calificacion>
+<table class="table">
+    <tr>
+        <th>Rut</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>edad</th>
+        <th>direccion</th>
+        <th>Ver notas</th>
+    </tr>  
+
+    <tr *ngFor ="let Alumno of estudiante">
+        <td>{{Alumno.rut}}</td>
+        <td>{{Alumno.nombre}}</td>
+        <td>{{Alumno.apellido}}</td>
+        <td>{{Alumno.edad}}</td>
+        <td>{{Alumno.direccion}}</td>
+        <td ><button (click)="desplegar(Alumno.rut)"> Ver </button></td>
+    </tr>
+  
+</table>
+
+  <div class="localizar">
+    <app-infonotas [notass]="notas"></app-infonotas>
+  </div>
+  

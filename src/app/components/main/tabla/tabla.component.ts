@@ -16,17 +16,14 @@ export class TablaComponent implements OnInit {
 
   ngOnInit() 
   {
-        this.serviceService.getUser().subscribe
+      this.serviceService.getUser().subscribe
       (
         (data) => 
         {
           console.log(data);
           this.data = data;
         }     
-      );
-
-      
-    
+      );         
   }
 
 }

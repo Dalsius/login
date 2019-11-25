@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../servicios/service.service';
+import { Alumno } from 'src/app/model/alumno';
 
 @Component({
   selector: 'app-alumno',
@@ -6,13 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alumno.component.css']
 })
 export class AlumnoComponent implements OnInit {
-  messageValue = '';
+  estudiante;
+  notas;
+  alumno: Alumno = new Alumno();
 
-  constructor() { }
+  constructor(
+    private serviceService: ServiceService) { }
 
-  ngOnInit() {
-    this.messageValue = 'Soy tu padre';
+  ngOnInit() 
+  {
+    this.serviceService.getAlumno().subscribe
+    (
+      (data) => 
+      {
+        console.log(data);
+        this.estudiante = data;
+      }     
+    );      
   }
-  printMessage(event: string)
-  {console.log(event)};
+
+  desplegar( params) 
+  {
+    this.serviceService.getNotas(params).subscribe
+    (
+      (data) => 
+      {
+        console.log(data);
+        this.notas = params;
+      }     
+    );     
+  }
+
 }
